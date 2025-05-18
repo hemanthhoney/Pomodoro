@@ -29,7 +29,7 @@ A Pomodoro timer web application built with Blazor Server on ASP.NET Core.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<your-username>/Pomodoro.git
+   git clone https://github.com/hemanthhoney/Pomodoro.git
    cd Pomodoro
    ```
 
