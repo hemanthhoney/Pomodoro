@@ -1,0 +1,16 @@
+@using Microsoft.AspNetCore.Components
+
+<svg class="progress-ring" width="220" height="220">
+  <circle class="ring-bg" stroke="var(--lavender-secondary)" stroke-width="20" fill="transparent" r="90" cx="110" cy="110"/>
+  <circle class="ring-progress @(AnimationTrigger? "complete" : "")" stroke="var(--purple-primary)" stroke-width="20" fill="transparent" r="90" cx="110" cy="110"
+    stroke-dasharray="@Circumference" stroke-dashoffset="@Offset" style="transition: stroke-dashoffset 1s linear"/>
+</svg>
+
+@code {
+  [Parameter] public bool AnimationTrigger { get; set; }
+  [Parameter] public int TotalSeconds { get; set; }
+  [Parameter] public int RemainingSeconds { get; set; }
+  private double Radius => 90;
+  private double Circumference => 2 * Math.PI * Radius;
+  private double Offset => Circumference * (1 - (double)RemainingSeconds / TotalSeconds);
+}

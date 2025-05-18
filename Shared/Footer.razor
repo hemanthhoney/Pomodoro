@@ -1,0 +1,9 @@
+<footer class="footer">
+  <div class="icons">
+    <button @onclick="() => Settings.InvokeAsync(null)">⚙️</button>
+  </div>
+</footer>
+
+@code {
+  [Parameter] public EventCallback Settings { get; set; }
+}

@@ -1,0 +1,11 @@
+@using Microsoft.AspNetCore.Components
+
+<div class="timer-display">
+  <div class="time">@($"{Remaining/60:00}:{Remaining%60:00}")</div>
+  <div class="subtitle">@Subtitle</div>
+</div>
+
+@code {
+  [Parameter] public int Remaining { get; set; }
+  [Parameter] public string Subtitle { get; set; } = string.Empty;
+}

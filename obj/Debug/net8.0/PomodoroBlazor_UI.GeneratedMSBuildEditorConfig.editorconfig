@@ -1,0 +1,71 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PomodoroBlazor_UI
+build_property.RootNamespace = PomodoroBlazor_UI
+build_property.ProjectDir = C:\Users\hemus\Downloads\PomodoroBlazor_UI_v27\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\hemus\Downloads\PomodoroBlazor_UI_v27
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Pages/Pomodoro.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9tb2Rvcm8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/CircularTimer.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENpcmN1bGFyVGltZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/Controls.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbnRyb2xzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/SessionCounter.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNlc3Npb25Db3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/Settings.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNldHRpbmdzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/TabNav.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRhYk5hdi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Shared/TimerDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRpbWVyRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hemus/Downloads/PomodoroBlazor_UI_v27/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

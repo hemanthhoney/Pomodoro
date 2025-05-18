@@ -1,0 +1,14 @@
+@using Microsoft.AspNetCore.Components
+
+<div class="session-counter">
+  @for (int i = 1; i <= Total; i++)
+  {
+    var css = i <= Current ? "dot filled" : "dot empty";
+    <span class="@css"></span>
+  }
+</div>
+
+@code {
+  [Parameter] public int Current { get; set; }
+  [Parameter] public int Total { get; set; }
+}

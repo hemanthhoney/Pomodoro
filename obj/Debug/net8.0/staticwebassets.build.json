@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "9VD1ssFUH20eVrYQ7RT+Z3AhANsY4Qi3PENlfIxgOV8=",
+  "Source": "PomodoroBlazor_UI",
+  "BasePath": "_content/PomodoroBlazor_UI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PomodoroBlazor_UI\\wwwroot",
+      "Source": "PomodoroBlazor_UI",
+      "ContentRoot": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\",
+      "BasePath": "_content/PomodoroBlazor_UI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\css\\app.css",
+      "SourceId": "PomodoroBlazor_UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\",
+      "BasePath": "_content/PomodoroBlazor_UI",
+      "RelativePath": "css/app.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\css\\variables.css",
+      "SourceId": "PomodoroBlazor_UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\",
+      "BasePath": "_content/PomodoroBlazor_UI",
+      "RelativePath": "css/variables.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\variables.css"
+    },
+    {
+      "Identity": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\sounds\\ding.mp3",
+      "SourceId": "PomodoroBlazor_UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\",
+      "BasePath": "_content/PomodoroBlazor_UI",
+      "RelativePath": "sounds/ding.mp3",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sounds\\ding.mp3"
+    }
+  ]
+}

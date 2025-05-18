@@ -1,0 +1,309 @@
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--gray-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.tab-button {
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: var(--slate-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-bottom: 3px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.tab-button.active {
+  color: var(--purple-primary);
+  border-color: var(--purple-primary);
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+.ring-bg, .ring-progress {
+  transform: translate(0.5px, 0.5px);
+  stroke-linecap: round;
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.timer-display .time {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--slate-text);
+}
+.timer-display .subtitle {
+  margin-top: .5rem;
+  color: var(--slate-text);
+  opacity: .7;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.btn {
+  padding: .5rem 1.5rem;
+  border: 2px solid var(--slate-text);
+  border-radius: .5rem;
+  background: transparent;
+  color: var(--slate-text);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn.primary {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
+  color: white;
+}
+.btn:hover { opacity: .8; }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: var(--slate-text);
+  opacity: .7;
+}
+.footer .icons button {
+  background: none; border: none; cursor: pointer; font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .pomodoro-container {
+  max-width: 800px;
+    width: 90%;
+    padding: 1rem;
+  }
+  .timer-display .time {
+    font-size: 2rem;
+  }
+}
+
+/* Modal overlay */
+.settings-modal, .stats-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--gray-bg);
+  color: var(--slate-text);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+  z-index: 900;
+}
+
+/* Task list */
+.task-list {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.task-list input[type="text"] {
+  width: calc(100% - 70px);
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+.task-list ul {
+  list-style: none;
+  padding: 0;
+}
+.task-list li {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+.task-list li span.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Animation for timer circle */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.ring-progress.complete {
+  animation: pulse 0.6s ease-out;
+}
+
+
+/* Mini settings button */
+.settings-mini {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.page-container { width: 90%; max-width: 1000px; margin: auto; }
+
+
+/* Center content and enlarge timer */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timer-wrapper {
+  width: 400px;
+  height: 400px;
+  margin: 2rem auto;
+}
+.circular-timer svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* BUTTON STYLES */
+.btn {
+  min-width: 60px;
+  min-height: 44px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+.btn:hover, .btn:focus {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn:focus {
+  outline: 3px solid var(--accent-color);
+}
+.btn.primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+.btn.primary:hover {
+  background-color: #5b20c2;
+}
+
+/* TIMER DISPLAY ACCESSIBILITY */
+.circular-timer svg {
+  width: 100%;
+  height: 100%;
+}
+.circular-timer svg circle {
+  stroke-width: 12;
+}
+
+/* TOOLTIP VIA TITLE ATTR */
+button[title] {
+  position: relative;
+}
+
+/* FOCUS STATES */
+:focus {
+  outline-offset: 2px;
+}
+
+/* CONTENT CENTERING (reaffirm) */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TAB NAV ITEMS accessible focus */
+.tab-nav button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.tab-nav button:focus {
+  outline: 3px solid var(--accent-color);
+}
+
+
+/* Fix controls layout */
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Primary button explicit color (Deep purple) */
+.btn.primary {
+  background-color: #7C3AED;
+  border-color: #7C3AED;
+  color: white;
+}
+
+/* Remove content class effects from controls */
+.controls.content {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure other .content uses only on page container, not nested controls */
+
+/* Button color variations */
+.btn.start {
+  background-color: #7C3AED; /* Deep purple */
+  border-color: #7C3AED;
+  color: #FFFFFF;
+}
+.btn.pause {
+  background-color: #14B8A6; /* Teal */
+  border-color: #14B8A6;
+  color: #FFFFFF;
+}
+.btn.reset {
+  background-color: #D8B4FE; /* Soft lavender */
+  border-color: #D8B4FE;
+  color: #1F2937; /* Dark slate text */
+}
+.btn.skip {
+  background-color: #1F2937; /* Dark slate */
+  border-color: #1F2937;
+  color: #FFFFFF;
+}
+/* Hover states */
+.btn.start:hover { background-color: #5B20C2; }
+.btn.pause:hover { background-color: #0F7C69; }
+.btn.reset:hover { background-color: #BFA2F5; }
+.btn.skip:hover { background-color: #161E2B; }
+
+
+/* Toggle Start/Pause button styling */
+.btn.toggle {
+  background-color: #7C3AED; /* Deep purple */
+  border-color: #7C3AED;
+  color: #FFFFFF;
+}
+.btn.toggle:hover {
+  background-color: #5B20C2;
+}

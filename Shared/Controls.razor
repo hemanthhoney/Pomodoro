@@ -1,0 +1,33 @@
+@using Microsoft.AspNetCore.Components
+@using System.Threading.Tasks
+
+<div class="controls">
+  <button class="btn toggle" @onclick="ToggleTimer"
+          aria-label="@(_isRunning ? "Pause timer" : "Start timer")"
+          title="@(_isRunning ? "Pause timer" : "Start timer")">
+    @(_isRunning ? "⏸️ Pause" : "▶️ Start")
+  </button>
+  <button class="btn reset" @onclick="() => Reset.InvokeAsync(null)"
+          aria-label="Reset timer" title="Reset timer">↻ Reset</button>
+  <button class="btn skip" @onclick="() => Skip.InvokeAsync(null)"
+          aria-label="Skip session" title="Skip session">⏭️ Skip</button>
+</div>
+
+@code {
+    [Parameter] public EventCallback Start { get; set; }
+    [Parameter] public EventCallback Pause { get; set; }
+    [Parameter] public EventCallback Reset { get; set; }
+    [Parameter] public EventCallback Skip { get; set; }
+
+    private bool _isRunning;
+
+    private async Task ToggleTimer()
+    {
+        if (_isRunning)
+            await Pause.InvokeAsync(null);
+        else
+            await Start.InvokeAsync(null);
+
+        _isRunning = !_isRunning;
+    }
+}

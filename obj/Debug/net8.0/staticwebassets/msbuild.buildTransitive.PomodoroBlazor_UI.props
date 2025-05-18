@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PomodoroBlazor_UI.props" />
+</Project>

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\css\\variables.css",
+      "PackagePath": "staticwebassets\\css\\variables.css"
+    },
+    {
+      "Id": "C:\\Users\\hemus\\Downloads\\PomodoroBlazor_UI_v27\\wwwroot\\sounds\\ding.mp3",
+      "PackagePath": "staticwebassets\\sounds\\ding.mp3"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PomodoroBlazor_UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PomodoroBlazor_UI.props",
+      "PackagePath": "build\\PomodoroBlazor_UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PomodoroBlazor_UI.props",
+      "PackagePath": "buildMultiTargeting\\PomodoroBlazor_UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PomodoroBlazor_UI.props",
+      "PackagePath": "buildTransitive\\PomodoroBlazor_UI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

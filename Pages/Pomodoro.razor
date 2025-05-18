@@ -1,0 +1,105 @@
+@page "/"
+@using Microsoft.JSInterop
+@using System.Timers
+@inject IJSRuntime JS
+
+<div class="page-container" style="position: relative;">
+  <button class="settings-mini" @onclick="() => showSettings = true">⚙️</button>
+<TabNav ActiveTab="@mode" ActiveTabChanged="OnModeChanged" />
+
+  <div class="timer-wrapper content" tabindex="0">
+  <CircularTimer TotalSeconds="@(durations[mode] * 60)" RemainingSeconds="@remaining" AnimationTrigger="@animateRing" />
+  <TimerDisplay Remaining="@remaining" Subtitle="@mode" />
+</div>
+
+    <Controls Start="@Start" Pause="@Pause" Reset="@Reset" Skip="@Skip" />
+
+@if (showSettings)
+{
+  <div class="modal-backdrop"></div>
+  <Settings OnSave="OnSaveSettings" OnCancel="@(() => showSettings=false)" />
+}
+</div>
+
+@code {
+    private string mode = "Focus";
+    private int cycle = 1;
+    private int remaining;
+    private bool running;
+    private bool showSettings = false;
+    private bool animateRing = false;
+    private Timer timer = null!;
+
+    private Dictionary<string,int> durations = new() { ["Focus"]=25, ["Short Break"]=5, ["Long Break"]=15 };
+
+    protected override void OnInitialized()
+    {
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += Tick;
+        SetMode(mode);
+    }
+
+
+    private void Tick(object? sender, ElapsedEventArgs e)
+    {
+        if (remaining > 0) remaining--;
+        else
+        {
+            timer.Stop();
+            InvokeAsync(SessionEnded);
+        }
+        InvokeAsync(StateHasChanged);
+    }
+
+    private async void SessionEnded()
+    {
+        await JS.InvokeVoidAsync("new Audio('/sounds/ding.mp3').play");
+        NextSession();
+    }
+
+    private void NextSession()
+    {
+        if (mode == "Focus" && cycle % 4 == 0) mode = "Long Break";
+        else if (mode == "Focus") mode = "Short Break";
+        else { mode = "Focus"; cycle++; }
+        SetMode(mode);
+        running = false;
+        animateRing = true;
+        _ = Task.Delay(600).ContinueWith(_ => { animateRing = false; InvokeAsync(StateHasChanged); });
+    }
+
+    private void SetMode(string m) => remaining = durations[m] * 60;
+
+    private void Start() { if (!running) { running = true; timer.Start(); } }
+    private void Pause() { if (running) { running = false; timer.Stop(); } }
+    private void Reset() { running = false; timer.Stop(); SetMode(mode); }
+    private void Skip() { timer.Stop(); NextSession(); }
+
+    private void OnSaveSettings(Dictionary<string,int> newDurations)
+    {
+        durations = newDurations;
+        SetMode(mode);
+        showSettings = false;
+    }
+
+    private void OnModeChanged(string m)
+    {
+        timer.Stop();
+        mode = m;
+        SetMode(m);
+        running = false;
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var fx = await JS.InvokeAsync<string>("localStorage.getItem", "focusDuration");
+            var sb = await JS.InvokeAsync<string>("localStorage.getItem", "shortDuration");
+            var lb = await JS.InvokeAsync<string>("localStorage.getItem", "longDuration");
+            durations["Focus"] = int.TryParse(fx, out var v1) ? v1 : durations["Focus"];
+            durations["Short Break"] = int.TryParse(sb, out var v2) ? v2 : durations["Short Break"];
+            durations["Long Break"] = int.TryParse(lb, out var v3) ? v3 : durations["Long Break"];
+            StateHasChanged();
+        }
+    }
+}
